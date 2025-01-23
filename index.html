@@ -47,7 +47,7 @@
 						
 
 						<!-- Resume -->
-												<article id="work" class="panel" style="max-width: 3000px; margin: 50px auto; padding: 150px;">
+							<article id="work" class="panel" style="max-width: 3000px; margin: 50px auto; padding: 150px;">
 							<header>
 								<h2>Papers and Contributions</h2>
 							</header>
@@ -70,20 +70,6 @@
 										<a href="india.pdf" target="_blank" class="paper-container">
 											<img src="images/india.jpg" alt="India Paper" class="hover-effect">
 										</a>
-
-										<!-- Commented Out Machine Learning Paper -->
-										<!-- 
-										<a href="ML.pdf" target="_blank" class="paper-container">
-											<img src="images/mlml.jpg" alt="Machine Learning" class="hover-effect">
-										</a>
-										-->
-
-										<!-- Commented Out Behavioral Economics Paper -->
-										<!-- 
-										<div class="paper-container">
-											<img src="images/behavioural.jpg" alt="Behavioral Economics" class="hover-effect">
-										</div>
-										-->
 									</div>
 								</section>
 
@@ -115,9 +101,9 @@
 
 							</div> <!-- End Scrollable Wrapper -->
 
-							<!-- CSS for Layout and Horizontal Scrolling on Zoom -->
+							<!-- CSS for Responsive Design -->
 							<style>
-								/* Keep Original Layout */
+								/* Default Grid for Desktop */
 								.grid {
 									display: grid;
 									grid-template-columns: repeat(2, 1fr); /* Two per row */
@@ -176,17 +162,26 @@
 									background: #555; 
 								}
 
-								/* Make sure users can scroll if they zoom too much */
-								@media (max-width: 1400px) {
+								/* MOBILE RESPONSIVE FIX */
+								@media (max-width: 768px) { 
 									.grid {
-										display: flex; /* Switch to flex layout */
-										flex-wrap: nowrap; /* Prevents wrapping when zoomed */
-										gap: 50px; /* Keeps spacing */
+										display: flex;
+										flex-direction: column; /* Stack items vertically */
+										align-items: center; /* Center everything */
+										gap: 30px; /* Reduce spacing for a better fit */
+									}
+
+									.paper-container, .contribution-container {
+										width: 90%; /* Adjust width for better mobile fit */
+										height: auto; /* Keep aspect ratio */
+									}
+
+									h2, h3 {
+										text-align: center; /* Prevents misalignment on small screens */
 									}
 								}
 							</style>
 						</article>
-
 
 						<!-- Volunteering -->
 						<article id="volunteer" class="panel" style="text-align: center; max-width: 90%; margin: 50px auto;">
