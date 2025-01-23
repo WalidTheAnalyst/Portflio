@@ -47,74 +47,84 @@
 						
 
 						<!-- Resume -->
-						<article id="work" class="panel" style="max-width: 3000px; margin: 50px auto; padding: 150px;">
+												<article id="work" class="panel" style="max-width: 3000px; margin: 50px auto; padding: 150px;">
 							<header>
 								<h2>Papers and Contributions</h2>
 							</header>
-							
-							<section> 
-								<header>
-									<h3>Papers</h3>    
-								</header>
-								<div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 70px;">
-									
-									<!-- Clickable Paper: Economic Cost of Gender -->
-									<a href="gendercost.pdf" target="_blank" class="paper-container">
-										<img src="images/eco1400.jpg" alt="Economic Cost of Gender" class="hover-effect">
-									</a>
-							
-									<!-- Clickable Paper: India Paper -->
-									<a href="india.pdf" target="_blank" class="paper-container">
-										<img src="images/india.jpg" alt="India Paper" class="hover-effect">
-									</a>
-							
-									<!-- Commented Out Machine Learning Paper -->
-									<!-- 
-									<a href="ML.pdf" target="_blank" class="paper-container">
-										<img src="images/mlml.jpg" alt="Machine Learning" class="hover-effect">
-									</a>
-									-->
-							
-									<!-- Commented Out Behavioral Economics Paper -->
-									<!-- 
-									<div class="paper-container">
-										<img src="images/behavioural.jpg" alt="Behavioral Economics" class="hover-effect">
+
+							<!-- Scrollable Wrapper -->
+							<div class="scroll-wrapper">
+
+								<!-- Papers Section -->
+								<section> 
+									<header>
+										<h3>Papers</h3>    
+									</header>
+									<div class="grid">
+										<!-- Clickable Paper: Economic Cost of Gender -->
+										<a href="gendercost.pdf" target="_blank" class="paper-container">
+											<img src="images/eco1400.jpg" alt="Economic Cost of Gender" class="hover-effect">
+										</a>
+
+										<!-- Clickable Paper: India Paper -->
+										<a href="india.pdf" target="_blank" class="paper-container">
+											<img src="images/india.jpg" alt="India Paper" class="hover-effect">
+										</a>
+
+										<!-- Commented Out Machine Learning Paper -->
+										<!-- 
+										<a href="ML.pdf" target="_blank" class="paper-container">
+											<img src="images/mlml.jpg" alt="Machine Learning" class="hover-effect">
+										</a>
+										-->
+
+										<!-- Commented Out Behavioral Economics Paper -->
+										<!-- 
+										<div class="paper-container">
+											<img src="images/behavioural.jpg" alt="Behavioral Economics" class="hover-effect">
+										</div>
+										-->
 									</div>
-									-->
-							
-								</div>
-							</section>
-							
-							<!-- Contributions Section -->
-							<section>
-								<header>
-									<h3>Contributions</h3>    
-								</header>
-								<div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 70px;">
-									
-									<!-- Clickable Contribution: World Bank Paper -->
-									<a href="https://documents1.worldbank.org/curated/en/099826007162422517/pdf/IDU12f69bf581e7fa144061b0cf15dc97f2b2bbd.pdf" target="_blank" class="contribution-container">
-										<img src="images/wb.jpg" alt="World Bank Contribution" class="hover-effect">
-									</a>
-								</div>
-							</section>
-							
-							<!-- Policy Recommendations Section -->
-							<section>
-								<header>
-									<h3>Policy Recommendations</h3>    
-								</header>
-								<div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 70px;">
-									
-									<!-- Clickable Policy Recommendation: World Bank Document -->
-									<a href="writtenn.pdf" target="_blank" class="contribution-container">
-										<img src="images/written.jpg" alt="Policy Recommendations" class="hover-effect">
-									</a>
-								</div>
-							</section>
-							
-							<!-- CSS for hover effects on papers and contributions -->
+								</section>
+
+								<!-- Contributions Section -->
+								<section>
+									<header>
+										<h3>Contributions</h3>    
+									</header>
+									<div class="grid">
+										<!-- Clickable Contribution: World Bank Paper -->
+										<a href="https://documents1.worldbank.org/curated/en/099826007162422517/pdf/IDU12f69bf581e7fa144061b0cf15dc97f2b2bbd.pdf" target="_blank" class="contribution-container">
+											<img src="images/wb.jpg" alt="World Bank Contribution" class="hover-effect">
+										</a>
+									</div>
+								</section>
+
+								<!-- Policy Recommendations Section -->
+								<section>
+									<header>
+										<h3>Policy Recommendations</h3>    
+									</header>
+									<div class="grid">
+										<!-- Clickable Policy Recommendation: World Bank Document -->
+										<a href="writtenn.pdf" target="_blank" class="contribution-container">
+											<img src="images/written.jpg" alt="Policy Recommendations" class="hover-effect">
+										</a>
+									</div>
+								</section>
+
+							</div> <!-- End Scrollable Wrapper -->
+
+							<!-- CSS for Layout and Horizontal Scrolling on Zoom -->
 							<style>
+								/* Keep Original Layout */
+								.grid {
+									display: grid;
+									grid-template-columns: repeat(2, 1fr); /* Two per row */
+									grid-gap: 70px;
+								}
+
+								/* Paper and Contribution Containers */
 								.paper-container, .contribution-container {
 									height: 560px; 
 									width: 400px; 
@@ -124,24 +134,58 @@
 									margin: auto; 
 									border: 2px solid white; 
 									box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-									cursor: pointer; /* Makes it clear that it's clickable */
+									cursor: pointer;
 									transition: transform 0.2s ease-in-out;
-									text-decoration: none; /* Removes underline */
+									text-decoration: none;
+									flex-shrink: 0; /* Prevents shrinking when zoomed */
 								}
-							
+
+								/* Hover Effects */
 								.paper-container:hover, .contribution-container:hover {
-									transform: scale(1.05); /* Slightly enlarges the image on hover */
+									transform: scale(1.05);
 								}
-							
+
+								/* Ensuring Images Scale Properly */
 								.hover-effect {
 									width: 100%; 
 									height: 100%; 
 									object-fit: cover;
 								}
-							</style>
-							
-						</article>
 
+								/* Horizontal Scrolling Only When Zoomed */
+								.scroll-wrapper {
+									overflow-x: auto; /* Allow left/right scrolling */
+									overflow-y: visible; /* Keep normal vertical layout */
+									white-space: normal; /* Keep items in grid structure */
+									display: flex;
+									flex-direction: column; /* Ensures sections are stacked */
+									padding-bottom: 20px; /* Extra space for easy scrolling */
+								}
+
+								/* Custom Scrollbar for Better UX */
+								.scroll-wrapper::-webkit-scrollbar {
+									height: 8px;
+								}
+
+								.scroll-wrapper::-webkit-scrollbar-thumb {
+									background: #888; 
+									border-radius: 4px;
+								}
+
+								.scroll-wrapper::-webkit-scrollbar-thumb:hover {
+									background: #555; 
+								}
+
+								/* Make sure users can scroll if they zoom too much */
+								@media (max-width: 1400px) {
+									.grid {
+										display: flex; /* Switch to flex layout */
+										flex-wrap: nowrap; /* Prevents wrapping when zoomed */
+										gap: 50px; /* Keeps spacing */
+									}
+								}
+							</style>
+						</article>
 
 
 						<!-- Volunteering -->
