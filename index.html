@@ -1,12 +1,14 @@
+ <!-- GITHUB IS SENSITIVE TO HIGH AND LOWER CASE-->
+
 <!DOCTYPE HTML>
 <!--
-	Walid Roudani
+	Astral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Walid Roudani EA</title>
+		<title>Walid Roudani</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -39,7 +41,7 @@
 							</header>
 							<a href="#work" class="jumplink pic" style="margin: 0; padding: 0;">
 								<span class="arrow icon solid fa-chevron-right" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 0.8em;"><span>See my work</span></span>
-								<img src="images/me_really.JPG" alt="Walid Roudani" style="width:100%; object-fit: contain; margin-top: 20px;">
+								<img src="images/me_really.jpg" alt="Walid Roudani" style="width:100%; object-fit: contain; margin-top: 20px;">
 							</a>
 						</article>
 						
@@ -47,73 +49,83 @@
 						
 
 						<!-- Resume -->
-							<article id="work" class="panel" style="max-width: 3000px; margin: 50px auto; padding: 150px;">
+						<article id="work" class="panel" style="max-width: 1200px; margin: 50px auto; padding: 50px;">
 							<header>
-								<h2>Papers and Contributions</h2>
+								<h2 class="section-title">Research & Contributions</h2>
 							</header>
 
-							<!-- Scrollable Wrapper -->
-							<div class="scroll-wrapper">
+							<!-- Papers Section -->
+							<section> 
+								<header>
+									<h3>Papers</h3>    
+								</header>
+								<div class="grid">
+									<!-- Clickable Paper: Economic Cost of Gender -->
+									<a href="gendercost.pdf" target="_blank" class="paper-container">
+										<img src="images/eco1400.jpg" alt="Economic Cost of Gender" class="hover-effect">
+									</a>
 
-								<!-- Papers Section -->
-								<section> 
-									<header>
-										<h3>Papers</h3>    
-									</header>
-									<div class="grid">
-										<!-- Clickable Paper: Economic Cost of Gender -->
-										<a href="gendercost.pdf" target="_blank" class="paper-container">
-											<img src="images/eco1400.jpg" alt="Economic Cost of Gender" class="hover-effect">
-										</a>
+									<!-- Clickable Paper: India Paper -->
+									<a href="india.pdf" target="_blank" class="paper-container">
+										<img src="images/india.jpg" alt="India Paper" class="hover-effect">
+									</a>
+								</div>
+							</section>
 
-										<!-- Clickable Paper: India Paper -->
-										<a href="india.pdf" target="_blank" class="paper-container">
-											<img src="images/india.jpg" alt="India Paper" class="hover-effect">
-										</a>
-									</div>
-								</section>
+							<!-- Contributions Section -->
+							<section>
+								<header>
+									<h3>Contributions</h3>    
+								</header>
+								<div class="grid">
+									<!-- Clickable Contribution: World Bank Paper -->
+									<a href="https://documents1.worldbank.org/curated/en/099826007162422517/pdf/IDU12f69bf581e7fa144061b0cf15dc97f2b2bbd.pdf" target="_blank" class="contribution-container">
+										<img src="images/wb.jpg" alt="World Bank Contribution" class="hover-effect">
+									</a>
+								</div>
+							</section>
 
-								<!-- Contributions Section -->
-								<section>
-									<header>
-										<h3>Contributions</h3>    
-									</header>
-									<div class="grid">
-										<!-- Clickable Contribution: World Bank Paper -->
-										<a href="https://documents1.worldbank.org/curated/en/099826007162422517/pdf/IDU12f69bf581e7fa144061b0cf15dc97f2b2bbd.pdf" target="_blank" class="contribution-container">
-											<img src="images/wb.jpg" alt="World Bank Contribution" class="hover-effect">
-										</a>
-									</div>
-								</section>
+							<!-- Policy Recommendations Section -->
+							<section>
+								<header>
+									<h3>Policy Recommendations</h3>    
+								</header>
+								<div class="grid">
+									<!-- Clickable Policy Recommendation: World Bank Document -->
+									<a href="writtenn.pdf" target="_blank" class="contribution-container">
+										<img src="images/written.jpg" alt="Policy Recommendations" class="hover-effect">
+									</a>
+								</div>
+							</section>
 
-								<!-- Policy Recommendations Section -->
-								<section>
-									<header>
-										<h3>Policy Recommendations</h3>    
-									</header>
-									<div class="grid">
-										<!-- Clickable Policy Recommendation: World Bank Document -->
-										<a href="writtenn.pdf" target="_blank" class="contribution-container">
-											<img src="images/written.jpg" alt="Policy Recommendations" class="hover-effect">
-										</a>
-									</div>
-								</section>
-
-							</div> <!-- End Scrollable Wrapper -->
-
-							<!-- CSS for Responsive Design -->
+							<!-- CSS for Layout and Styling -->
 							<style>
+								/* Section Title Styling */
+								.section-title {
+									text-align: center;
+									font-size: 2.2em;
+									font-weight: bold;
+									text-decoration: underline;
+									font-family: "Georgia", "Times New Roman", serif;
+									margin-bottom: 40px;
+								}
+
 								/* Default Grid for Desktop */
 								.grid {
 									display: grid;
-									grid-template-columns: repeat(2, 1fr); /* Two per row */
-									grid-gap: 70px;
+									grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Responsive two-column layout */
+									grid-gap: 40px;
+									justify-content: center;
+									align-items: center;
+									max-width: 1200px;
+									margin: auto;
 								}
 
 								/* Paper and Contribution Containers */
 								.paper-container, .contribution-container {
 									height: 560px; 
-									width: 400px; 
+									width: 100%; 
+									max-width: 400px;
 									display: flex; 
 									align-items: center; 
 									justify-content: center; 
@@ -123,7 +135,6 @@
 									cursor: pointer;
 									transition: transform 0.2s ease-in-out;
 									text-decoration: none;
-									flex-shrink: 0; /* Prevents shrinking when zoomed */
 								}
 
 								/* Hover Effects */
@@ -138,50 +149,26 @@
 									object-fit: cover;
 								}
 
-								/* Horizontal Scrolling Only When Zoomed */
-								.scroll-wrapper {
-									overflow-x: auto; /* Allow left/right scrolling */
-									overflow-y: visible; /* Keep normal vertical layout */
-									white-space: normal; /* Keep items in grid structure */
-									display: flex;
-									flex-direction: column; /* Ensures sections are stacked */
-									padding-bottom: 20px; /* Extra space for easy scrolling */
-								}
-
-								/* Custom Scrollbar for Better UX */
-								.scroll-wrapper::-webkit-scrollbar {
-									height: 8px;
-								}
-
-								.scroll-wrapper::-webkit-scrollbar-thumb {
-									background: #888; 
-									border-radius: 4px;
-								}
-
-								.scroll-wrapper::-webkit-scrollbar-thumb:hover {
-									background: #555; 
-								}
-
-								/* MOBILE RESPONSIVE FIX */
-								@media (max-width: 768px) { 
+								/* Mobile Responsive Fix */
+								@media (max-width: 1024px) { 
 									.grid {
-										display: flex;
-										flex-direction: column; /* Stack items vertically */
-										align-items: center; /* Center everything */
-										gap: 30px; /* Reduce spacing for a better fit */
+										grid-template-columns: 1fr; /* Single column layout for smaller screens */
 									}
 
 									.paper-container, .contribution-container {
-										width: 90%; /* Adjust width for better mobile fit */
-										height: auto; /* Keep aspect ratio */
+										width: 90%;
+										height: auto;
 									}
 
 									h2, h3 {
-										text-align: center; /* Prevents misalignment on small screens */
+										text-align: center;
 									}
 								}
 							</style>
 						</article>
+
+
+
 
 						<!-- Volunteering -->
 						<article id="volunteer" class="panel" style="text-align: center; max-width: 90%; margin: 50px auto;">
@@ -193,12 +180,12 @@
 							<section>
 								<h3> 1. Empowering Women Education in Morocco, 2015-2018 </h3>
 								<p style="font-size: 0.8em; text-align: justify; color: #333;">
-									Dar Taliba is a schooling support program developed by the "Mohamed V Foundation for Solidariy" to combat the dropout rates among rural children in Morocco. It has evolved to provide broader support, helping thousands of disadvantaged youths to continue their education and aspire to a better future. In collaboration with the Rabat American School in Morocco, I was involved in the Dar Taliba program, where I taught English to young girls from these rural areas. These girls often have to live far from their families to pursue their education. We also organized basketball activities, and provided them with clothes and school supplies to support their studies and well-being.
+								Dar Taliba is a schooling support program developed by the "Mohamed V Foundation for Solidariy" to combat the dropout rates among rural children in Morocco. It has evolved to provide broader support, helping thousands of disadvantaged youths to continue their education and aspire to a better future. In collaboration with the Rabat American School in Morocco, I was involved in the Dar Taliba program, where I taught English to young girls from these rural areas. These girls often have to live far from their families to pursue their education. We also organized basketball activities, and provided them with clothes and school supplies to support their studies and well-being.
 								</p>
 								<div style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 0px; grid-auto-rows: minmax(100px, auto); border: 5px solid #333; box-shadow: 0px 4px 8px rgba(0,0,0,0.5);">
 									<!-- Main Image -->
 									<div style="grid-column: 1 / span 3; grid-row: 1 / span 2; display: flex;">
-										<img src="images/Dar_Taliba_clothes.JPG" alt="Main Volunteering Activity" style="width: 100%; height: 100%; object-fit: cover;">
+										<img src="images/Dar_Taliba_clothes.jpg" alt="Main Volunteering Activity" style="width: 100%; height: 100%; object-fit: cover;">
 									</div>
 									
 									<!-- Smaller Images -->
